@@ -21,7 +21,7 @@ function JobList() {
     try {
       setError(null);
       setLoading(true);
-      const res = await axios.get('http://localhost:5500/api/jobs/getjobs', { params: { location, role } });
+      const res = await axios.get('https://job-lgv7.onrender.com/api/jobs/getjobs', { params: { location, role } });
       
       if (res.data.success === false) {
         setError(res.data.error);
