@@ -12,7 +12,7 @@ function createIndeedJobUrl(location, role) {
 }
 
 const scrapeJobs2 = async (location,role) => {
-  const browser = await puppeteer. launch({ headless: false, });;
+  const browser = await puppeteer. launch({ headless: false,executablePath: process.env.PUPPETEER_EXECUTABLE_PATH, });;
     const page = await browser.newPage();
     const url = createIndeedJobUrl(location,role);
     await page.goto(

@@ -15,7 +15,7 @@ function createNaukriJobUrl(location, role) {
 
 
 const scrapeJobs1 = async (location, role) => {
-  const browser = await puppeteer. launch({ headless: false, }); // Set headless to false for debugging
+  const browser = await puppeteer. launch({ headless: false,executablePath: process.env.PUPPETEER_EXECUTABLE_PATH, }); // Set headless to false for debugging
   const page = await browser.newPage();
   const url = createNaukriJobUrl(location, role);
   await page.goto(
